@@ -1,0 +1,27 @@
+.example-spacer {
+    flex: 1 1 auto;
+}
+/* Declaramos con palabra reservada MEDIA -> DISPOSITIVOS PEQUEÑOS( ej: CELULARES )*/
+  @media(min-width: 300px )and (max-width: 700px){
+    mat-toolbar{
+        background-color: aqua;
+    }
+
+    #menuInicio{
+        display: none;
+    }
+
+    #menuInicial{
+        display: none;
+    }
+  }
+
+  /* DISPOSITIVOS MAS GRANDES*/
+  @media (min-width: 700px){
+    mat-toolbar{
+        background-color: beige;
+    }
+    #menuSecciones{
+        display: none;
+    }
+  }
