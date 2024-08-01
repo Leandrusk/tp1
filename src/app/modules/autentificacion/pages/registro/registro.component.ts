@@ -81,6 +81,7 @@ export class RegistroComponent {
     })
     //el metodo catch toma una falla y la vuelve un ERROR
     .catch(error=>{
+      //cambiar
       alert('Hubo un problema al registrar un nuevo usuario')
 
       this.LimpiarInputs()
