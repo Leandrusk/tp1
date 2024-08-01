@@ -1,5 +1,5 @@
 <table class="table">
-    <head>
+    <thead>
         <tr>
             <th scope="col">#</th>
             <th scope="col">Nombre</th>
@@ -8,21 +8,21 @@
             <th scope="col">Categoria</th>
             <th scope="col">Acciones</th>
         </tr>
-    </head>
+    </thead>
     <tbody>
-        <tr *ngFor="let producto of colleccionProductos">
+        <tr *ngFor="let producto of coleccionProductos">
             <th scope="row">1</th>
 
-            <td> <img src="{{productos.imagen}}" alt="{{productos.alt}}">
+            <td> <img src="{{producto.imagen}}" alt="{{producto.alt}}">
             </td>
-            <td>{{producto.Nombre}}</td>
-            <td>{{producto.Precio}}</td>
-            <td>{{producto.Descripcion}}</td>
-            <td>{{producto.Categoria}}</td>
+            <td>{{producto.nombre}}</td>
+            <td>{{producto.precio}}</td>
+            <td>{{producto.descripcion}}</td>
+            <td>{{producto.categoria}}</td>
 
             <!-- ACCIONES-->
             <td> <button id="btn-edit" title="Editar" type="button" class="btn btn-online-warning">
-                <mat-icon>edit</mat-icon>
+                <mat-icon>edit</mat-icon> 
             </button></td>
             <td>
                 <button id="btn-delete" title="Eliminar" type="button" class="btn btn-online-danger">

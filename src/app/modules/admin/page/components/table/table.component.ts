@@ -10,7 +10,7 @@ import { FormControl,FormGroup,Validators } from '@angular/forms';
 })
 export class TableComponent {
   //crear coleccion de productos del tipo producto -> lo defnimos con un array<<>
-  colleccionProductos:Producto[]=[]
+  coleccionProductos:Producto[]=[]
  
   //Definimos formulario para los productos
   /**
