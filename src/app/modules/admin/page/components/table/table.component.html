@@ -22,8 +22,8 @@
 
             <!-- ACCIONES-->
             <td> <button id="btn-edit" title="Editar" type="button" class="btn btn-online-warning">
-                <mat-icon>edit</mat-icon> 
-            </button></td>
+                    <mat-icon>edit</mat-icon>
+                </button></td>
             <td>
                 <button id="btn-delete" title="Eliminar" type="button" class="btn btn-online-danger">
                     <mat-icon>delete</mat-icon>
@@ -32,3 +32,66 @@
         </tr>
     </tbody>
 </table>
+
+<!-- Button para agregar productos -->
+<button type="button" class="btn btn-online-primary" data-bs-toggle="modal" data-bs-target="#AgregarProdcuto">
+    Launch demo modal
+</button>
+
+
+<!-- Modal para agregar productos -->
+<div class="modal fade" id="AgregarProdcuto" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Ingrese un nuevo producto</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <!-- Encabezado del modal  -->
+            <div [formGroup]="producto" class="modal-body">
+
+                <div class="m-3">
+                    <label class="form-label"> Ingrese el nombre del producto</label>
+                    <input class="form-control" type="text" formControlName="nombre" placeholder="Ej: Medias de chanchitos">
+                </div>
+
+                <div class="m-3">
+                    <label class="form-label"> Ingrese el precio del producto</label>
+                    <input class="form-control" type="number" formControlName="percio" placeholder="Ej: Medias de chanchitos">
+                </div>
+
+                <div class="m-3">
+                    <label class="form-label"> Ingrese la descripcion del producto</label>
+                    <input class="form-control" type="text" formControlName="descripcion" placeholder="Ej: Medias de chanchitos">
+                </div>
+
+                <div class="m-3">
+                    <label class="form-label"> Ingrese la categoria del producto</label>
+                    <input class="form-control" class="form-select" formControlName="categoria">
+                    <option selected>Elija una opcion</option>
+                    <option value="alimentacion">alimentacion</option>
+                    <option value="indumentaria">indumentaria</option>
+                    <option value="juguetes">juguetes</option>
+                </div>
+
+                <div class="m-3">
+                    <label class="form-label"> Ingrese la imagen del producto</label>
+                    <input class="form-control" type="text" formControlName="imagen" placeholder="Ingrese el vinculo de una ">
+                </div>
+
+                <div class="m-3">
+                    <label class="form-label"> Ingrese texto alternativo </label>
+                    <input class="form-control" type="text" formControlName="alt" placeholder="Ej: Ingrese un texto alternativo">
+                </div>
+            </div>
+           
+             <!-- acciones del modal  -->
+             <div class="modal-footer">
+                <button type="button" class="btn btn-online-success" data-bs-dismiss="modal">Save changes</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              
+            </div>
+
+        </div>
+    </div>
+</div>

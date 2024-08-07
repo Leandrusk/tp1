@@ -15,9 +15,9 @@ export class CardComponent {
     this.info = [
       {
         id: "",
-        nombre: "Chanchito",
+        nombre: "El nuevo orden de las cosas",
         edad: 5,
-        imagen: "https://i1.sndcdn.com/artworks-000190784980-i4qoly-t500x500.jpg",
+        imagen: "https://okdiario.com/img/2017/10/23/libros-de-ciencia-ficcion-el-nuevo-orden-de-las-cosas.jpg",
         alt: "Un chanchito"
       },
       {
