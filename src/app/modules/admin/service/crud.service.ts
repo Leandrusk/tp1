@@ -47,4 +47,17 @@ export class CrudService {
    }
    //EDITAR PRODUCTOS
    //ELIMINAR PRODUCTOS
+   eliminarProducto (idProducto: string){
+    return new Promise((resolve,reject) => {
+      try {
+        //accedo a la coleccion, busco su ID y lo elimino
+        const respuesta = this.productoCollection.doc(idProducto).delete();
+        resolve(respuesta)
+      }
+      catch(error){
+        reject(error);
+      }
+    }
+  )
+ }
 }

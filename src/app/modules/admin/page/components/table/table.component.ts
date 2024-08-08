@@ -11,7 +11,12 @@ import { FormControl,FormGroup,Validators } from '@angular/forms';
 export class TableComponent {
   //crear coleccion de productos del tipo producto -> lo defnimos con un array<<>
   coleccionProductos:Producto[]=[]
+
+  //Variable para manejar el estado de Edicion y eliminacion de productos
+  modalVisibleProducto: boolean = false;
  
+  //variable que va a tomar el producto que nosotros elijamos
+  productoSeleccionado!: Producto //! recibe valores vacios
   //Definimos formulario para los productos
   /**
    * Atributos alfanumericos (string) se inicializan con comillas simples
@@ -59,5 +64,23 @@ export class TableComponent {
       })
     }
 
+  }
+//Funcion para alertar al usuario del producto que desea eliminar
+  mostrarBorrar(productoSeleccionado: Producto){
+    //abre el modal
+    this.modalVisibleProducto = true;
+    //toma los valores del producto elegido
+    this.productoSeleccionado = productoSeleccionado
+
+  }
+  //Funcion para eliminar el producto 
+  borrarProducto(){
+    this.servicioCrud.eliminarProducto(this.productoSeleccionado.idProducto)
+    .then(respuesta => {
+      alert("El producto se ha eliminado correcto")
+    })
+    .catch(error => {
+      alert("No se a podido eliminar "+error)
+    })
   }
 }
