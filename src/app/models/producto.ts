@@ -1,5 +1,5 @@
 export interface Producto {
-    idProducto: String
+    idProducto: string
     nombre: string
     precio:number
     descripcion:string
