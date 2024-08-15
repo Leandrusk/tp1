@@ -21,8 +21,9 @@
             <td>{{producto.categoria}}</td>
 
             <!-- ACCIONES-->
+             <!-- mostrarEditar() -->
             <td> <button id="btn-edit" title="Editar" type="button" class="btn btn-online-warning"
-                    data-bs-toggle="modal" data-bs-target="editarProducto">
+                    data-bs-toggle="modal" data-bs-target="editarProducto" (click)="mostrarEditar(producto)">
                     <mat-icon>edit</mat-icon>
                 </button></td>
             <td>
@@ -61,7 +62,7 @@
 
                 <div class="m-3">
                     <label class="form-label"> Ingrese el precio del producto</label>
-                    <input class="form-control" type="number" formControlName="percio"
+                    <input class="form-control" type="number" formControlName="precio"
                         placeholder="Ej: Medias de chanchitos">
                 </div>
 
@@ -94,7 +95,73 @@
                 </div>
             </div>
 
-            <!-- acciones del modal  -->
+            <!-- acciones del modal para guardar cambios  -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-online-success" data-bs-dismiss="modal"
+                    (click)="editarProducto()">guardar cambios</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!--Modal para editar productos-->
+
+<!-- -->
+<div class="modal fade" id="editarProducto" *ngFor="let productoEdit of coleccionProductos" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">edite un producto</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <!-- Encabezado del modal -->
+            <div [formGroup]="producto" class="modal-body">
+
+                <div class="m-3">
+                    <label class="form-label"> Ingrese el nombre del producto</label>
+                    <input class="form-control" type="text" formControlName="nombre"
+                        placeholder="{{productoEdit.nombre}}">
+                </div>
+
+                <div class="m-3">
+                    <label class="form-label"> Ingrese el precio del producto</label>
+                    <input class="form-control" type="number" formControlName="percio"
+                        placeholder="{{productoEdit.precio}}">
+                </div>
+
+                <div class="m-3">
+                    <label class="form-label"> Ingrese la descripcion del producto</label>
+                    <input class="form-control" type="text" formControlName="descripcion"
+                        placeholder="{{productoEdit.descripcion}}">
+                </div>
+
+                <div class="m-3">
+                    <label class="form-label"> Ingrese la categoria del producto</label>
+                    <select class="form-control" class="form-select" formControlName="categoria">
+                    <label>Elija una opcion</label>
+                    <option value="alimentacion">alimentacion</option>
+                    <option value="indumentaria">indumentaria</option>
+                    <option value="juguetes">juguetes</option>
+                    </select>
+                </div>
+
+                <div class="m-3">
+                    <label class="form-label"> Ingrese la imagen del producto</label>
+                    <input class="form-control imagen" type="text" formControlName="imagen"
+                        placeholder="{{productoEdit.imagen}}">
+                </div>
+
+                <div class="m-3">
+                    <label class="form-label"> Ingrese texto alternativo </label>
+                    <input class="form-control" type="text" formControlName="alt"
+                        placeholder="{{productoEdit.alt}}">
+                </div>
+            </div>
+
+            <!-- acciones del modal para guardar cambios -->
             <div class="modal-footer">
                 <button type="button" class="btn btn-online-success" data-bs-dismiss="modal"
                     (click)="agregarProducto()">Save changes</button>

@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Producto } from 'src/app/models/producto';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
-import { Action } from 'rxjs/internal/scheduler/Action';
 import { map } from 'rxjs';
 
 

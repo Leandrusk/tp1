@@ -9,13 +9,18 @@ import { ProductoComponent } from './pages/producto/producto.component';
 import { IndumentariaComponent } from './pages/indumentaria/indumentaria.component';
 import { AlimentacionComponent } from './pages/alimentacion/alimentacion.component';
 import { JuguetesComponent } from './pages/juguetes/juguetes.component';
+import { CardJuguetesComponent } from './components/card-juguetes/card-juguetes.component';
+import { CardComponent } from '../inicio/components/card/card.component';
+
+//
 
 @NgModule({
   declarations: [
     ProductoComponent,
     IndumentariaComponent,
     AlimentacionComponent,
-    JuguetesComponent
+    JuguetesComponent,
+    CardJuguetesComponent
   ],
   imports: [
     CommonModule,
@@ -25,7 +30,9 @@ import { JuguetesComponent } from './pages/juguetes/juguetes.component';
     ProductoComponent,
     IndumentariaComponent,
     AlimentacionComponent,
-    JuguetesComponent
+    JuguetesComponent,
+    CardComponent,
+    CardJuguetesComponent,
   ]
 })
 export class ProductoModule { }

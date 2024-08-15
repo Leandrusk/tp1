@@ -45,7 +45,7 @@ export class TableComponent {
     if(this.producto.valid){
       let nuevoProducto: Producto = {
         //idProducto no se toma porque es generado por la BD y no el usuario
-        idProducto: "",
+        idProducto: '',
         //el resto es tomado con informacion ingresada por el usuario
         nombre: this.producto.value.nombre!,
         descripcion: this.producto.value.descripcion!,
@@ -57,10 +57,12 @@ export class TableComponent {
       }
       await this.servicioCrud.crearProductos(nuevoProducto)
       .then(producto =>{
-        alert("Ha ingresado un nuevo producto con exito")
+        alert("Ha ingresado un nuevo producto con exito");
+        this.producto.reset();
       } )
       .catch(error => {
         alert("Hubo un problema al agregar un nuevo producto")
+        this.producto.reset();
       })
     }
 
@@ -78,9 +80,11 @@ export class TableComponent {
     this.servicioCrud.eliminarProducto(this.productoSeleccionado.idProducto)
     .then(respuesta => {
       alert("El producto se ha eliminado correcto")
+      this.producto.reset();
     })
     .catch(error => {
       alert("No se a podido eliminar "+error)
+      this.producto.reset();
     })
   }
 
