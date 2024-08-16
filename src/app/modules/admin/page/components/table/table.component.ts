@@ -36,7 +36,7 @@ export class TableComponent {
   }
 
    ngOnInit(): void{
-    this.servicioCrud.obtenerProductos().subscribe(producto => {
+    this.servicioCrud.obtenerProducto().subscribe(producto => {
       this.coleccionProductos = producto;
     })
   }

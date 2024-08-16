@@ -7,12 +7,14 @@ import { ProductoRoutingModule } from './producto-routing.module';
 // VISTAS
 import { ProductoComponent } from './pages/producto/producto.component';
 import { IndumentariaComponent } from './pages/indumentaria/indumentaria.component';
+
+
 import { AlimentacionComponent } from './pages/alimentacion/alimentacion.component';
 import { JuguetesComponent } from './pages/juguetes/juguetes.component';
 import { CardJuguetesComponent } from './components/card-juguetes/card-juguetes.component';
-import { CardComponent } from '../inicio/components/card/card.component';
+import { CardComponent } from './components/card/card.component';
 
-//
+// COMPONENTES LOCALES
 
 @NgModule({
   declarations: [
@@ -20,6 +22,8 @@ import { CardComponent } from '../inicio/components/card/card.component';
     IndumentariaComponent,
     AlimentacionComponent,
     JuguetesComponent,
+    JuguetesComponent,
+    CardComponent,
     CardJuguetesComponent
   ],
   imports: [
@@ -31,8 +35,11 @@ import { CardComponent } from '../inicio/components/card/card.component';
     IndumentariaComponent,
     AlimentacionComponent,
     JuguetesComponent,
+    JuguetesComponent,
     CardComponent,
-    CardJuguetesComponent,
+    CardJuguetesComponent
   ]
-})
+}
+)
 export class ProductoModule { }
+

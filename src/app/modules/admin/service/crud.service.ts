@@ -15,6 +15,7 @@ export class CrudService {
     //referenciamos coleccion de productos y sera subida como 'producto' a firebase
     this.productoCollection = database.collection('producto')
    }
+
    //CREAR METODO DE PRODUCTOS
    crearProductos(producto: Producto){
     //Una promesa es 
@@ -37,14 +38,14 @@ export class CrudService {
    }
    //OBTENER PRODUCTOS
 
-   obtenerProductos(){
+   obtenerProducto(){
     //snapshotChanges toma una captura del estado de los datos
     // pipe - funciona como una tuberia que retoma el nuevo arreglo de datos
     //map - "mapea" o recorre esa nueva informacion
     //a - resguarda la nueva informacion y la envia
     return this.productoCollection.snapshotChanges().pipe(map(action => action.map(a => a.payload.doc.data())));
    }
-   //EDITAR PRODUCTOS
+   //EDITAR PRODUCTOSc
 
    modificarProducto(idProducto: string, nuevaData: Producto){
     //accedemos a la coleccion, buscamos por ID y actualizamos la informacion
