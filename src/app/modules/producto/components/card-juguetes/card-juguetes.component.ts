@@ -33,6 +33,7 @@ export class CardJuguetesComponent {
     //Mostrar la coleccion actual de juguetes
   }
 
+  
 
   //Funcion para filtrar los productos que sean del tipo 'juguetes'
   mostrarProductoJuguetes() {
