@@ -28,7 +28,7 @@ export class RegistroComponent {
     nombre: '',
     apellido:'',
     email: '',
-    rol: '',
+    rol: 'vis', // rol predeterminado de visitante al registrarse 
     password: ''
   }
 //referenciamos a nuestros servicios
@@ -108,7 +108,7 @@ LimpiarInputs(){
     nombre: this.usuarios.nombre = '',
     apellido: this.usuarios.apellido = '',
     password: this.usuarios.password = '',
-    rol: this.usuarios.rol = '',
+    rol: this.usuarios.rol = 'vis',
     email: this.usuarios.email=''
   }
 }

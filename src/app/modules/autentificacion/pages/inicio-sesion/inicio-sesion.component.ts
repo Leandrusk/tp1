@@ -97,8 +97,20 @@ export class InicioSesionComponent {
     const res = await this.servicioAuth.IniciarSesion(credenciales.email, credenciales.password)
     .then(res=> {
       alert('Se a logueado con exito');
+      //almacena el rol del usuario en el servicio de autentificacion
+      this.servicioAuth.enviarRolUsuario(usuarioData.rol);
+
+      if(usuarioData.rol === "admin"){
+        console.log('inicio de sesion de usuario de admin')
+        //si es admin redirecciona a la vista de admin
+        this.servicioRutas.navigate(['/admin'])
+      }else{
+        console.log ('inicio de sesion de usuario de visitante');
+      }
+      //si es visitante lo redirecciona a la vista de 'inicio'
       this.servicioRutas.navigate(['/Inicio'])
     })
+   
     .catch (err => {
       alert('Hubo un problema al iniciar sesion '+ err);
       this.LimpiarInputs();

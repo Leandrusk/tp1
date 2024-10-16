@@ -152,8 +152,13 @@
 
                 <div class="mb-3">
                     <label class="form-label">Ingrese una imagen:</label>
-                    <input class="form-control" type="text" formControlName="imagen"
-                        placeholder="{{productoEdit.imagen}}">
+                    <!-- <input class="form-control" type="text" formControlName="imagen"
+                        placeholder="{{productoEdit.imagen}}"> -->
+
+                        <!-- type = file => recibe archivos 
+                         accept = "imagen/" : acepta todo tipo de extensiones (jpg,png,etc)
+                         (change) = "cargarImagen($event): ejecuta el evento de cargarImagen que definimos en la logica del componente" -->
+                        <input type="file" accept="imagen/" (change)="cargarImagen($event)">
                 </div>
 
                 <div class="mb-3">
