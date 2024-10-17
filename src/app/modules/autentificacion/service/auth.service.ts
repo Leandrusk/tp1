@@ -41,7 +41,7 @@ async obtenerUid(){
 
 //funcion que busca un usuario en la coleccionde 'usuarios' cuyo correo electronico coincida con el valor proporcionado
  async obtenerUsuario(email:string){
-return this.servicioFireStore.collection("usuarios", ref => ref.where("email,", '==', email)).get().toPromise()
+  return this.servicioFireStore.collection("usuarios", ref => ref.where("email", '==', email)).get().toPromise()
 
 }
 

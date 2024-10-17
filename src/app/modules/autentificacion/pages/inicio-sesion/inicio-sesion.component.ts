@@ -106,9 +106,10 @@ export class InicioSesionComponent {
         this.servicioRutas.navigate(['/admin'])
       }else{
         console.log ('inicio de sesion de usuario de visitante');
+        //si es visitante lo redirecciona a la vista de 'inicio'
+       this.servicioRutas.navigate(['/inicio'])
       }
-      //si es visitante lo redirecciona a la vista de 'inicio'
-      this.servicioRutas.navigate(['/Inicio'])
+      
     })
    
     .catch (err => {

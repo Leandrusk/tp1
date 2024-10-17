@@ -5,6 +5,7 @@ import { inject } from '@angular/core';
  import { Router } from '@angular/router';
 
  import{ map,switchMap, of, from} from 'rxjs'
+
 export const rutaProtegidaGuard: CanActivateFn = (route, state) => {
 
 //inyectamos servicio de autentificacion
@@ -15,5 +16,25 @@ export const rutaProtegidaGuard: CanActivateFn = (route, state) => {
 
   //Especificamos el rol esperado en el guardian
   const rolEsperado = 'admin';
-  return true;
+ return from (servicioAuth.obtenerUid()).pipe(switchMap(uid =>{
+  if (uid){
+    return servicioAuth.obtenerRol(uid).pipe(
+      map (rol =>{
+        if (rol=== rolEsperado){
+          console.log("usuario verificado como admin");
+          return true;
+
+        }else{
+          return  false;
+        }
+      })
+    )
+  }else{
+    //si no hay uid, el usuario no está logueado
+    console.log("usuario no verificado, permisos insuficientes");
+    //redirecciona al login si el usuario no es admin
+    return of(servicioRutas.createUrlTree(["/inicio"]))
+
+  }
+ }))
 };
